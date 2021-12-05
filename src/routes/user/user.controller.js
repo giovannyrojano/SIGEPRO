@@ -1,4 +1,4 @@
-const {register} = require("./user.ops")
+const {register,login} = require("./user.ops")
 
 const newUser = async (request, response) => {
     //tomar parametros del cuerpo de una petición
@@ -16,9 +16,27 @@ const newUser = async (request, response) => {
       });
     }
   };
+
+  const Login = async (request, response) => {
+    //tomar parametros del cuerpo de una petición
+    const { email, password } = request.body;
+    try {
+      result = await login(email, password);
+      response.status(200).json({
+        msg: "inicio de sesion exitoso",
+        result,
+      });
+    } catch (error) {
+      return response.status(400).json({
+        error: "true",
+        msg: error,
+      });
+    }
+  };
   
 
 
   module.exports = {
-    newUser
+    newUser,
+    Login
   }
