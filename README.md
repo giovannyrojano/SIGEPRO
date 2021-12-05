@@ -1,5 +1,5 @@
-"# SIGEPRO "
+# SIGEPRO
 
-Integrantes:
-Anderson Sanchez S.
-Giovanny Rojano C.
+# Integrantes:
+# * Anderson Sanchez S.
+# *Giovanny Rojano C.
