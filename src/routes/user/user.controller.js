@@ -2,9 +2,9 @@ const {register,login} = require("./user.ops")
 
 const newUser = async (request, response) => {
     //tomar parametros del cuerpo de una petición
-    const { name,lastName, email, password } = request.body;
+    const { name,lastName, email, password , role } = request.body;
     try {
-      result = await register(name,lastName,email, password);
+      result = await register(name,lastName,email, password , role);
       response.status(200).json({
         msg: "usuario registrado",
         result,
