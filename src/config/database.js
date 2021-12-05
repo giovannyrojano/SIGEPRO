@@ -6,7 +6,6 @@ const dbConnection = async () => {
   try {
     await mongoose.connect(
         `mongodb+srv://anderson:1234@guerrilla-games.hwfom.mongodb.net/Test?retryWrites=true&w=majority`,
-
     );
     console.log("successful connection");
   } catch {
