@@ -26,12 +26,13 @@ app.get("/",(request,response)=>{
 //ruta principal
 app.use("/api",router);
 
+//rutas inexistentes
 app.all("*", (request, response, next) => {
     next(
       new appError(`no se encuentra la ruta ${request.originalUrl} en el servidor`)
     );
   });
-
+//middleware para capturar errores
   app.use(errorHandler);
 
 //listen
