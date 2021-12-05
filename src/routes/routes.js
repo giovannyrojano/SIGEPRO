@@ -1,8 +1,7 @@
 const router = require("express").Router();
+const user = require("./user/user.routes");
 
 
-router.use("/prueba",(request,response)=>{
-    response.send("routes working")
-})
+router.use("/users",user)
 
 module.exports=router;
