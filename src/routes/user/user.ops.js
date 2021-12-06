@@ -3,9 +3,9 @@ const CryptoJS = require("crypto-js");
 const jwt = require("jsonwebtoken");
 
 module.exports = {
-    register(name,lastName,email,password){
+    register(name,lastName,email,password,role){
         return new Promise(async (resolve,reject)=>{
-            const newUser = new User({ name,lastName, email, password });
+            const newUser = new User({ name,lastName, email, password , role });
             //verificar que no exista el correo
             const verifyMail = await User.findOne({ email });
             if (verifyMail) {
@@ -38,7 +38,7 @@ module.exports = {
           }else{
             //generacion del jwt de la sesion del usuario
             const token = jwt.sign(
-              {id:verifyMail._id,nombre:verifyMail.name,apellido:verifyMail.lastName},
+              {id:verifyMail._id,nombre:verifyMail.name,apellido:verifyMail.lastName,rol:verifyMail.role},
               process.env.SECRET_KEY,{expiresIn:process.env.JWT_EXPIRE})
             resolve(token)
           }

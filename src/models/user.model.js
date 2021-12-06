@@ -18,6 +18,10 @@ const userSchema = Schema({
     type: String,
     required: [true, "la contraseña es obligatoria"],
   },
+  role: {
+    type: String,
+    required: [true, "el rol es obligatorio"],
+  }
 });
 
 module.exports = model("User", userSchema);

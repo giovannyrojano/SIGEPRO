@@ -36,7 +36,7 @@ app.all("*", (request, response, next) => {
   app.use(errorHandler);
 
 //listen
-app.listen(3000, () => {
-    console.log("Server On , port : ", 3000);
+app.listen(process.env.PORT || 3000, () => {
+    console.log("Server On , port : ", process.env.port || 3000);
   });
   
