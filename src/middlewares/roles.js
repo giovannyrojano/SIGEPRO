@@ -12,23 +12,23 @@ exports.admin = async (request, response, next) => {
           process.env.SECRET_KEY
         );
   
-        if (decodificar.role == 'admin' || decodificar.role == 'subalterno' || decodificar.role == 'lider') {
+        if (decodificar.role == 'admin') {
           console.log("usuario permitido");
           next();
         } else {
-          res.status(401).json({
+          response.status(401).json({
             error: "unauthorized user",
             msg: "usuario no autorizado",
           });
         }
       } catch (error) {
-        res.status(400).json({
+        response.status(400).json({
           error: error.message,
           msg: "token invalido",
         });
       }
     } else {
-      res.status(401).json({
+      response.status(401).json({
         msg: "token inexistente",
       });
     }
@@ -44,23 +44,23 @@ exports.admin = async (request, response, next) => {
           process.env.SECRET_KEY
         );
   
-        if (decodificar.role == 'subalterno') {
+        if (decodificar.role == 'subalterno' || decodificar.role == 'admin') {
           console.log("usuario permitido");
           next();
         } else {
-          res.status(401).json({
+          response.status(401).json({
             error: "unauthorized user",
             msg: "usuario no autorizado",
           });
         }
       } catch (error) {
-        res.status(400).json({
+        response.status(400).json({
           error: error.message,
           msg: "token invalido",
         });
       }
     } else {
-      res.status(401).json({
+      response.status(401).json({
         msg: "token inexistente",
       });
     }
@@ -76,23 +76,23 @@ exports.admin = async (request, response, next) => {
           process.env.SECRET_KEY
         );
   
-        if (decodificar.role == 'lider') {
+        if (decodificar.role == 'lider' || decodificar.role == 'admin') {
           console.log("usuario permitido");
           next();
         } else {
-          res.status(401).json({
+          response.status(401).json({
             error: "unauthorized user",
             msg: "usuario no autorizado",
           });
         }
       } catch (error) {
-        res.status(400).json({
+        response.status(400).json({
           error: error.message,
           msg: "token invalido",
         });
       }
     } else {
-      res.status(401).json({
+      response.status(401).json({
         msg: "token inexistente",
       });
     }
