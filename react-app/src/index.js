@@ -4,12 +4,22 @@ import "./index.css"
 import App from "./App"
 import reportWebVitals from "./reportWebVitals"
 
+
 ReactDOM.render(
   <React.StrictMode>
+
+
     <App />
+<<<<<<< HEAD
   </React.StrictMode>,
   document.getElementById("root")
 )
+=======
+
+  </React.StrictMode >,
+  document.getElementById('root')
+);
+>>>>>>> 467a593d62fefeb91940fa1b16d3e26b24461e6f
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
