@@ -1,4 +1,4 @@
-const { Schema, model } = require("mongoose");
+const { Schema, model } = require("mongoose")
 
 const activitiesSchema = Schema({
   projectId: {
@@ -25,6 +25,6 @@ const activitiesSchema = Schema({
   state: {
     type: String,
     required: [true, "el estado es obligatorio"],
-  }
-});
-module.exports = model("activities", activitiesSchema);
+  },
+})
+module.exports = model("activities", activitiesSchema)

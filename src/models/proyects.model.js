@@ -1,26 +1,30 @@
-const { Schema, model } = require("mongoose");
+const { Schema, model } = require("mongoose")
 
 const projectSchema = Schema({
-    title: {
+  title: {
     type: String,
     required: [true, "el titulo es obligatorio"],
     unique: true,
+  },
+  leaderId: {
+    type: String,
+    required: [true, "un proyecto siempre debe tener un lider"],
   },
   description: {
     type: String,
     required: [true, "la descripcion es obligatoria"],
   },
-  start_Date: {
+  startDate: {
     type: Date,
     required: [true, "la fecha de inicio es obligatoria"],
   },
-  end_Date: {
+  endDate: {
     type: Date,
     required: [false],
   },
   state: {
     type: String,
     required: [true, "el estado es obligatorio"],
-  }
-});
-module.exports = model("project", projectSchema);
+  },
+})
+module.exports = model("project", projectSchema)
