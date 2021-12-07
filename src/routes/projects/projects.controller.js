@@ -5,7 +5,7 @@ const {
   finishProject,
   getInitProjects,
   getFinishedProjects,
-} = require("./projects.ops")
+} = require('./projects.ops')
 
 // obtener todos los proyectos registrados
 const getAllProjects = async (request, response) => {
@@ -16,7 +16,7 @@ const getAllProjects = async (request, response) => {
     })
   } catch (error) {
     return response.status(500).json({
-      error: "true",
+      error: 'true',
       msg: error,
     })
   }
@@ -32,7 +32,7 @@ const getProject = async (request, response) => {
     })
   } catch (error) {
     return response.status(500).json({
-      error: "true",
+      error: 'true',
       msg: error,
     })
   }
@@ -44,12 +44,12 @@ const newProject = async (request, response) => {
   try {
     const result = await create(title, leaderId, description, startDate, state)
     response.status(200).json({
-      msg: "proyecto registrado",
+      msg: 'proyecto registrado',
       result,
     })
   } catch (error) {
     return response.status(400).json({
-      error: "true",
+      error: 'true',
       msg: error,
     })
   }
@@ -60,12 +60,12 @@ const finish = async (request, response) => {
   try {
     const result = await finishProject(id, date)
     response.status(200).json({
-      msg: "edicion exitosa",
+      msg: 'edicion exitosa',
       result,
     })
   } catch (error) {
     return response.status(500).json({
-      error: "true",
+      error: 'true',
       msg: error,
     })
   }
@@ -80,7 +80,7 @@ const initProjects = async (request, response) => {
     })
   } catch (error) {
     return response.status(500).json({
-      error: "true",
+      error: 'true',
       msg: error,
     })
   }
@@ -95,7 +95,7 @@ const finishedProjects = async (request, response) => {
     })
   } catch (error) {
     return response.status(500).json({
-      error: "true",
+      error: 'true',
       msg: error,
     })
   }
